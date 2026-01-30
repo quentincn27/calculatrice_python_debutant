@@ -1,2 +1,3 @@
-*calculatrice python débutant* : 
-mon premier programme python, l'objectif était de comprendre les bases du langage Python.
+# Beginner Python calculator:
+
+## My first Python program; the goal was to understand the basics of the Python language.
