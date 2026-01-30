@@ -1,44 +1,48 @@
-print("ma premiere calculatrice sous pyhton !")
+print("My first calculator in Python!")
 
-#on demande à l'utilisateur de choisir deux nombres
-nombre1 = input("Entrez un nombre :")
-nombre2 = input("Entrez un deuxième nombre :")
+# ask the user to choose two numbers
+number1 = input("Enter a number: ")
+number2 = input("Enter a second number: ")
 
-# on vérifie si oui ou non, les deux entrées sont des chiffres
-if nombre1.isnumeric() and nombre2.isnumeric():
-    print("Vous avez bien choisi deux chiffres !")
+# check whether both inputs are numeric
+if number1.isnumeric() and number2.isnumeric():
+    print("You have correctly entered two numbers!")
 
-# sinon les entrées ne sont pas des chiffres et on sort du programme 
+# otherwise, the inputs are not numbers and the program stops
 else:
-    print("Aumoins et des deux nombres additionnés n'en est pas un")
-    raise SystemExit("Fin du programme") 
+    print("At least one of the entered values is not a number")
+    raise SystemExit("End of program")
 
-# c'est des nombres : on change l'entée de str à int
-nombre1 = int(nombre1)
-nombre2 = int(nombre2)
+# inputs are numbers: convert from string to int
+number1 = int(number1)
+number2 = int(number2)
 
-# demander à l'utilisateur de choisir sa méthode de calcul
-operation = input("voulez vous soustraite, additionner, multiplier, ou, diviser ? (tapez -, +, *, /)")
+# ask the user to choose a calculation method
+operation = input(
+    "Do you want to subtract, add, multiply, or divide? (type -, +, *, /): "
+)
 
-# vérification que l'utilisateur a choisi un bon symbole de calcul
+# check that the user chose a valid operator
 if operation not in ["-", "+", "*", "/"]:
-      print("vous n'avez pas choisi de faire un calcul !")
-      raise SystemExit("Fin du programme") 
+    print("You did not choose a valid operation!")
+    raise SystemExit("End of program")
 
- # mise en place du calcul
+# perform the calculation
 else:
-     if operation == "-":
-         resultat = nombre1 - nombre2
-     elif operation == "+":
-         resultat = nombre1 + nombre2
-     elif operation == "*":
-         resultat = nombre1 * nombre2
-     elif operation == "/":
-         # refuser la division par 0
-         if nombre2 == 0:
-             print("Division par 0 impossible !")
-             raise SystemExit("Fin du programme") 
-         else:
-             resultat = nombre1 / nombre2
-     print(resultat)
-input("Appuyez sur Entrée pour quitter...")
+    if operation == "-":
+        result = number1 - number2
+    elif operation == "+":
+        result = number1 + number2
+    elif operation == "*":
+        result = number1 * number2
+    elif operation == "/":
+        # prevent division by zero
+        if number2 == 0:
+            print("Division by zero is not allowed!")
+            raise SystemExit("End of program")
+        else:
+            result = number1 / number2
+
+    print(result)
+
+input("Press Enter to exit...")
